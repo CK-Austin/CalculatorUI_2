@@ -15,18 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sApp.h">
+    <ClInclude Include="sMain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="sMain.h">
+    <ClInclude Include="Gridsizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sApp.cpp">
+    <ClCompile Include="sMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sMain.cpp">
+    <ClCompile Include="Gridsizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

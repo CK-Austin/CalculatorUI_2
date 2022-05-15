@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sApp.h" />
+    <ClInclude Include="Gridsizer.h" />
     <ClInclude Include="sMain.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sApp.cpp" />
+    <ClCompile Include="Gridsizer.cpp" />
     <ClCompile Include="sMain.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
