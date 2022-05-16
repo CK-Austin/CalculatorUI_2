@@ -19,12 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Gridsizer.h" />
+    <ClInclude Include="Calculator.h" />
     <ClInclude Include="sMain.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Gridsizer.cpp" />
+    <ClCompile Include="Calculator.cpp" />
     <ClCompile Include="sMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

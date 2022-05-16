@@ -18,7 +18,7 @@
     <ClInclude Include="sMain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Gridsizer.h">
+    <ClInclude Include="Calculator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -26,8 +26,11 @@
     <ClCompile Include="sMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Gridsizer.cpp">
+    <ClCompile Include="Calculator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

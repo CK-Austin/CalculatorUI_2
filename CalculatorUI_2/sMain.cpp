@@ -1,12 +1,12 @@
 #include "sMain.h"
-#include "Gridsizer.h"
+#include "Calculator.h"
 
 wxIMPLEMENT_APP(sMain);
 
 bool sMain::OnInit()
 {
-	GridSizer* gs = new GridSizer(wxT("GridSizer"));
-	gs->Show(true);
+	Calculator* calc = new Calculator(wxT("Calculator"));
+	calc->Show(true);
 
 	return true;
 	
