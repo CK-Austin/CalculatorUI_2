@@ -1,5 +1,6 @@
 #include "Calculator.h"
 
+
 wxBEGIN_EVENT_TABLE(Calculator, wxFrame)
     EVT_BUTTON(-1, OnButtonClicked)
 wxEND_EVENT_TABLE()
@@ -15,33 +16,37 @@ Calculator::Calculator(const wxString& title)
 
     sizer->Add(display, 0, wxEXPAND | wxTOP | wxBOTTOM, 4);
     gs = new wxGridSizer(5, 4, 3, 3);
-
-    gs->Add(new wxButton(this, 2000, wxT("C")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 2000, wxT("bin")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 2000, wxT("mod")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 2000, wxT("hex")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("/")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("7")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("8")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("9")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("*")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("4")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("5")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("6")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("+")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("1")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("2")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("3")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("-")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT("0")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 10001, wxT(".")), 0, wxEXPAND);
-    gs->Add(new wxButton(this, 2000, wxT("=")), 0, wxEXPAND);
-
+    
+    ButtonFactory b;
+  
+    gs->Add(b.CreateAddButton(this, 2000, wxT("C"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 2000, wxT("bin"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 2000, wxT("mod"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 2000, wxT("hex"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("/"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("7"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("8"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("9"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("*"),  wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("4"),  wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("5"),  wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("6"),  wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("+"),  wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("1"),  wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("2"),  wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("3"),  wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("-"),  wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("0"),  wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 10001, wxT("."),  wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+    gs->Add(b.CreateAddButton(this, 2000, wxT("="), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, wxButtonNameStr), 0, wxEXPAND);
+   
+   
+    
     sizer->Add(gs, 1, wxEXPAND);
     SetSizer(sizer);
     SetMinSize(wxSize(270, 220));
 
-    Centre();
+   
 }
 
 void Calculator::OnButtonClicked(wxCommandEvent& evt)
